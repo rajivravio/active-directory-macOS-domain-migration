@@ -18,7 +18,7 @@ if [[ ! -d "$LOGPATH" ]]; then
 fi
 set -xv; exec 1> $LOGPATH/movedomainslog.txt 2>&1  # you can name the log file what you want
 version=1.1
-oldAD='qatar.northwestern.edu'
+oldAD='OLD.DOMAIN.EDU'
 currentAD=`dsconfigad -show | grep -i "active directory domain" | awk '{ print $5 }'`
 
 # let the user know what we are doing
@@ -44,7 +44,7 @@ loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
 
 # ensure time is set from the same server as the dc. Change this to whatever time server is relevent
 # on reuse
-ntpdate -u time.northwestern.edu
+ntpdate -u TIME.SERVER.EDU
 
 
 # unbind from AD
