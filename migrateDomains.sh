@@ -71,7 +71,8 @@ dscl . delete /Users/$loggedInUser
 
 # bind to new AD
 # using a JAMF policy to bind to the new AD. The policy numbe ris important. Take care when resuing this script 
-# to ensure this is accounted for
+# to ensure this is accounted for. This can be replaced with a dsconfig ad line to bind if jamf is not used but 
+# we had issues where the load balancing by jamf helped reduced failed binds significantly
 jamf policy -id 714
 
 # reset permissions
